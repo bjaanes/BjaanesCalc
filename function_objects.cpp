@@ -61,6 +61,7 @@ void Help::execute(string command, ostringstream &output)
 						break;
 					}
 				}
+				break;
 			}
 		}
 	}
