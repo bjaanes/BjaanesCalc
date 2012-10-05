@@ -1,5 +1,7 @@
 This help contains the basic commands
 
+:
+calc c
 Calculation:
 [Calculate expression]
 calc / c expression
@@ -9,8 +11,11 @@ ex: c (2+3)*24
 Supports some basic arithemtic like + - * / and grouping eg. (expression)*2
 ---
 
+
 Matrix Operations:
 
+:
+addmatrix am
 [Add matrix]
 addmatrix / am name rows cols
 ex: addmatrix A 2 2
@@ -19,6 +24,8 @@ ex: am example 2 1
 Adds a new matrix to memory with a set number of rows and columns
 ---
 
+:
+editmatrix em
 [Edit matrix]
 editmatrix / em name val/x val/x .. val/x
 ex: editmatrix A 1 2 x 4
@@ -29,6 +36,8 @@ x keeps the current value without editing it.
 Edits row per row
 ---
 
+:
+fillmatrix fm
 [Fill matrix]
 fillmatrix / fm name value
 ex: fillmatrix A 3.2
@@ -36,37 +45,48 @@ ex: fillmatrix A 3.2
 Fills a matrix with a given value
 ---
 
-
+:
+printmatrix pm
 [Print matrix]
 printmatrix / pm name
 
 Print a matrix to the screen
 ---
 
+:
+printmatrices pms
 [Print matrices]
 printmatrices / pms
 
 Prints the name and size of all matrices in memory
 ---
 
+:
+determinantmatrix dm
 [Determinant]
 determinantmatrix / dm name
 
 Prints the determinant of the matrix
 ---
 
+:
+transposematrix tm
 [Transpose matrix]
 transposematrix / tm name
 
 Prints the transpose of a matrix on the screen
 ---
 
+:
+inversematrix im
 [Inverse matrix]
 inversematrix / im name
 
 Prints the inverse of a matrix on the screen
 ---
 
+:
+eigenvaluesmatrix evlm
 [Eigenvalues]
 eigenvaluesmatrix / evlm name
 
@@ -74,6 +94,8 @@ Prints the eigenvalues of a matrix on the screen
 Note that this prints complex numbers even if they are not
 ---
 
+:
+eigenvectormatrix evcm
 [Eigenvectors]
 eigenvectormatrix / evcm name
 

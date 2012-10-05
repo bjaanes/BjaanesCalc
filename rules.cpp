@@ -13,7 +13,7 @@ map<regex, Function*> createRules() {
 
 	// Displays some help
 	rules.insert( pair<regex, Function*>(
-		regex("^([h][e][l][p])|([h])$"),
+		regex("^(([h][e][l][p])|([h]))(\\s\\w+)?$"),
 		new Help()
 		));
 
