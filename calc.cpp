@@ -3,6 +3,8 @@
  * Programming: Practice & Principles using c++; Bjarne Stroustrup
  */
 
+// THIS IS SOMEWHAT BROKEN: 2+2(3) does not work, 2+2*(3) doest not work either. FIX PLZ
+
 #include "calc.hpp"
 #include <string>
 #include <iostream>
@@ -89,38 +91,39 @@ double primary(stringstream &ss)
 {
 	char c = ss.get();
 
-	// UGLY FUCKING CODE!
 	if (isdigit(c) || c == '.' || c == '-') 
-	{ // This ought to be a number!
-		string doubleString; // To store our number in
-		doubleString += c; 
+	{
+		string doubleString;
+		doubleString += c;
+
 		while (true) 
 		{ // Read the rest of the number (if any)
 			c = ss.get();
-			if (isdigit(c) || c == '.') // Still valid, add it
+			if (isdigit(c) || c == '.') // Still valid
 				doubleString += c;
 			else 
-			{ // Not? Then were done for now
+			{ // Not valid anymore, finish up
 				ss.unget();
 				return string_to_double(doubleString);
 			}
 		}
 	} else if (c == '(')
-	{ // uuuh, a new expression we got?
+	{ // Looks like a new expression to me!
 		double d = expression(ss);
 		c = ss.get();
 	} else 
-	{ // Fuuuuuuuuuu
+	{
 		throw CalcException("Invalid expression!");
 	}
 	
 }
 
+/* Converts a given string to a double value and returns it */
 double string_to_double( const string& s )
 {
 	istringstream i(s);
 	double x;
-	if (!(i >> x)) // Just push i into x like a baws
+	if (!(i >> x)) // Just push i into x
 		return 0;
 	return x;
 } 

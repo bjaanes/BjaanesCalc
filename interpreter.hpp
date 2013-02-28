@@ -8,7 +8,10 @@
 #include <sstream>
 #include <boost/regex.hpp>
 
-/* Explain the class a bit? */
+/* The interpreter uses a set of rules to interpret command, 
+   call function related to the command and give back some
+   output in a stringstream. Often the answer to a problem
+*/
 
 class Interpreter 
 {

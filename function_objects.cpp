@@ -376,7 +376,6 @@ void TransposeMatrix::execute(string command, ostringstream &output)
 		output << "Transpose matrix of '" << name << "':\n";
 		output << trans(map_matrix->second);
 	}
-
 }
 
 vector<string> splitString(string input) 

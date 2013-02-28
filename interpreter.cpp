@@ -10,7 +10,12 @@
 using namespace std;
 using namespace boost;
 
-/* Explain how this works */
+/* The interpreter uses a set of rules, found in "rules".
+   It uses regular expressions to see if the given command
+   is valid. If so, it executes the rules function call and
+   let that thing finish the job for it. After the input has 
+   been interpreted, the interpreter dosent give a fuck how it goes. 
+*/
 void Interpreter::interpret(string input, ostringstream &output) 
 {
 	for (map<regex, Function*>::const_iterator iter = rules.begin();
