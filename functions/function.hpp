@@ -16,7 +16,7 @@ public:
 	// Takes a command, executes and returns an appropriate ouput (errors also):
 	virtual void execute(std::string command, std::ostringstream &output) = 0;
 
-	// Put in some inhereted class??
+    // Accessible for all inhereted classes
 	static std::map<std::string, arma::Mat<double> > matrices;
 };
 

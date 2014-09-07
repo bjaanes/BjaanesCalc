@@ -3,7 +3,7 @@
  * Programming: Practice & Principles using c++; Bjarne Stroustrup
  */
 
-// THIS IS SOMEWHAT BROKEN: 2+2(3) does not work, 2+2*(3) doest not work either. FIX PLZ
+// 2+2(3) does not work
 
 #include "calc.hpp"
 #include <string>
@@ -55,7 +55,7 @@ double expression(stringstream &ss)
 		case '-':
 			left -= term(ss);
 			break;
-		default: // Either some error, but most probably end of expression or just a term
+        default: // End of expression, term or some error
 			ss.unget();
 			return left;
 		}
@@ -75,7 +75,7 @@ double term(stringstream &ss)
 		case '/':
 		{
 			double right = primary(ss);
-			if (right == 0) throw CalcException("Divided by zero!"); // plz
+            if (right == 0) throw CalcException("Divided by zero!");
 			left /= right;
 			break;
 		}
@@ -107,11 +107,15 @@ double primary(stringstream &ss)
 				return string_to_double(doubleString);
 			}
 		}
-	} else if (c == '(')
-	{ // Looks like a new expression to me!
-		double d = expression(ss);
-		c = ss.get();
-	} else 
+    }
+    else if (c == '(')
+    { // new expression
+        double expressionValue = expression(ss);
+        c = ss.get(); // Get the )
+        if (c != ')') throw CalcException("Invalid expression, expected ')'");
+        return expressionValue;
+    }
+    else
 	{
 		throw CalcException("Invalid expression!");
 	}

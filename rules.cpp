@@ -1,6 +1,17 @@
 #include "rules.hpp"
-#include "function.hpp"
-#include "function_objects.hpp"
+#include "functions/function.hpp"
+#include "functions/help.hpp"
+#include "functions/calculate.hpp"
+#include "functions/addmatrix.hpp"
+#include "functions/printmatrix.hpp"
+#include "functions/fillmatrix.hpp"
+#include "functions/editmatrix.hpp"
+#include "functions/printmatrices.hpp"
+#include "functions/determinantmatrix.hpp"
+#include "functions/eigenvaluesmatrix.hpp"
+#include "functions/eigenvectorsmatrix.hpp"
+#include "functions/inversematrix.hpp"
+#include "functions/transposematrix.hpp"
 #include <map>
 #include <boost/regex.hpp>
 
@@ -20,13 +31,13 @@ map<regex, Function*> createRules() {
 	// Calculate normal math expression
 	rules.insert( pair<regex, Function*>(
 		regex("^(([c][a][l][c])|([c]))\\s[(\\-?\\d(.\\d)?)\\w\\+\\-\\*\\/]+$"),
-		new Calculate()
+        new Calculate()
 		));
 	
 	// Add matrix
 	rules.insert( pair<regex, Function*>(
 		regex("^(([a][d][d][m][a][t][r][i][x])|([a][m]))\\s\\w+\\s\\d+\\s\\d$"),
-		new AddMatrix()
+        new AddMatrix()
 		));
 
 	// Print matrix

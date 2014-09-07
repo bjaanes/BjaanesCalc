@@ -9,7 +9,7 @@ using namespace std;
 sends it to an interpreter for interpretetion and execution
 and then shows the output of the actions to the user */
 int main() {
-	const string prompt = "--> ";
+    const string PROMPT = "--> ";
 	string input;
 	Interpreter interpreter(createRules()); //Interpreter with rules
 
@@ -17,7 +17,7 @@ int main() {
 	{ // Read, interpret, display:
 		ostringstream output(ostringstream::out);
 		
-		cout << prompt;
+        cout << PROMPT;
 		getline(cin, input);
 
 		if (!cin || input == "exit" || input == "quit") break; 

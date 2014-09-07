@@ -1,6 +1,5 @@
 #include "interpreter.hpp"
-#include "function.hpp"
-#include "function_objects.hpp"
+#include "functions/function.hpp"
 #include <map>
 #include <string>
 #include <iostream>
@@ -14,7 +13,7 @@ using namespace boost;
    It uses regular expressions to see if the given command
    is valid. If so, it executes the rules function call and
    let that thing finish the job for it. After the input has 
-   been interpreted, the interpreter dosent give a fuck how it goes. 
+   been interpreted, the interpreter dosent not care how it goes
 */
 void Interpreter::interpret(string input, ostringstream &output) 
 {

@@ -1,7 +1,7 @@
 #ifndef RULES_HPP
 #define RULES_HPP
 
-#include "function.hpp"
+#include "functions/function.hpp"
 #include <map>
 #include <boost/regex.hpp>
 

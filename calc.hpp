@@ -3,7 +3,7 @@
 
 #include <string>
 
-double calculate(std::string expression); // Might throw an exception if shit fails
+double calculate(std::string expression); // Might throw an exception
 
 #endif
 
